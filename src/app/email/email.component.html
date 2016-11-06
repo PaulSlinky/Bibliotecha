@@ -1,0 +1,38 @@
+<section class="container" [ngStyle]="{
+  'height': screenHeight + '%', 
+  'width': screenWidth + '%', 
+  'justify-content':'center',
+  'z-index':screenDistance,
+  'filter':'blur(' + screenBlur + 'px)',
+  'right' : '0px'
+  }">
+    <div class="test4" [ngStyle]="{
+    'border-radius':'34px',
+    'box-shadow':'5px 3px 10px rgba(0,50,50,.5),
+        -5px -3px 20px 5px rgba(0,200,200,.5),
+        inset 3px 3px 3px rgba(255, 200, 255, 0.25),
+        inset -3px -3px 3px rgba(0, 255, 255, 0),
+        inset 0px 0px 3px 5px rgba(0, 255, 255, 0),
+        inset -1px 2px 1px rgba(255, 255, 255, 0.5)',
+    'background-image':'linear-gradient(rgba(0,250,250,0.45), rgba(0,150,150,0.45))'
+    }">
+
+    <!--,
+    'transform-style':'preserve-3d',
+    'transform':'perspective( 600px ) translate3d(' + distanceX + '%, ' + distanceY + '%, ' + screenDistance + 'px) rotateY( ' + screenRotationY + 'deg ) rotateX( ' + screenRotationX + 'deg )'-->
+<!--  Screen content   -->
+        <app-email-submission>  </app-email-submission>
+        <app-template-paypal [ngStyle]="{
+    'margin':'34px'
+    }">  </app-template-paypal>
+
+
+<!--TODO: Move to component-->
+
+
+
+
+    </div>
+</section>
+
+

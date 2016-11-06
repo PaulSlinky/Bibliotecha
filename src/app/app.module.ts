@@ -6,12 +6,18 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CubeComponent } from './cube/cube.component';
 import { FabComponent } from './fab/fab.component';
+import { EmailComponent } from './email/email.component';
+import { TemplateEmailComponent } from './templates/template-email.component';
+import { TemplatePaypalComponent } from './templates/template-paypal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CubeComponent,
-    FabComponent
+    FabComponent,
+    EmailComponent,
+    TemplateEmailComponent,
+    TemplatePaypalComponent
   ],
   imports: [
     BrowserModule,
