@@ -18,6 +18,8 @@ export class CubeComponent implements AfterViewInit {
   private canvasRef: ElementRef;
 
   private cube: THREE.Mesh;
+  private spin: THREE.Mesh;
+
 
   private renderer: THREE.WebGLRenderer;
 
@@ -68,8 +70,9 @@ export class CubeComponent implements AfterViewInit {
   private animateCube() {
     //TODO: MOVE TO CAMERA
     //<<<<<<<<<<<<<<<<
-    this.cube.rotation.x += this.rotationSpeedX;
+    // this.cube.rotation.x += this.rotationSpeedX;
     this.cube.rotation.y += this.rotationSpeedY;
+    this.spin.rotation.y += (this.rotationSpeedY)/2;
     //>>>>>>>>>>>>>>>>  >>>>>
   }
 
@@ -80,6 +83,23 @@ export class CubeComponent implements AfterViewInit {
   /**
    * Create the cube
    */
+  private createSpin() {
+    let texture = new THREE.TextureLoader().load('/assets/textures/biblio.png');
+
+
+    let material = new THREE.MeshBasicMaterial({ map: texture});
+
+
+    let geometry = new THREE.BoxGeometry(32, 32, 32);
+
+    this.spin = new THREE.Mesh(geometry, material);
+    this.spin.applyMatrix( new THREE.Matrix4().makeTranslation(91, -44, 0) );
+
+    this.scene.add(this.spin);
+
+  }
+
+
   private createCube() {
     let texture = new THREE.TextureLoader().load(this.texture);
 
@@ -104,6 +124,7 @@ export class CubeComponent implements AfterViewInit {
 
     // Add cube to scene
     this.scene.add(this.cube);
+    
   }
 
   /**
@@ -175,6 +196,7 @@ export class CubeComponent implements AfterViewInit {
   public ngAfterViewInit() {
     this.createScene();
     this.createCube();
+    this.createSpin();
     this.startRenderingLoop();
   }
 }

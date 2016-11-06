@@ -9,6 +9,7 @@ import { FabComponent } from './fab/fab.component';
 import { EmailComponent } from './email/email.component';
 import { TemplateEmailComponent } from './templates/template-email.component';
 import { TemplatePaypalComponent } from './templates/template-paypal.component';
+import { LogospinComponent } from './logospin/logospin.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TemplatePaypalComponent } from './templates/template-paypal.component';
     FabComponent,
     EmailComponent,
     TemplateEmailComponent,
-    TemplatePaypalComponent
+    TemplatePaypalComponent,
+    LogospinComponent
   ],
   imports: [
     BrowserModule,
